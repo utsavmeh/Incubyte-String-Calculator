@@ -16,5 +16,9 @@ RSpec.describe StringCalculator, type: :model do
       expect(StringCalculator.add("2,3")).to eq(5)
     end
 
+    it "returns the sum of numbers separated by new lines" do
+      expect(StringCalculator.add("1\n2,3")).to eq(6)
+      expect(StringCalculator.add("4\n5\n6")).to eq(15)
+    end
   end
 end
